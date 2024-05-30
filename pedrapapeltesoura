@@ -1,0 +1,17 @@
+from random import randint
+
+while True:
+    x = int(input('Pedra: 1\nPapel: 2\nTesoura: 3\n~> '))
+    bot = randint(1, 3)
+    ppt = ['Pedra', 'Papel', 'Tesoura']
+
+    if x == bot:
+        print(f"O bot escolheu {ppt[bot - 1]} \nEMPATE!")
+    elif (x == 1 and bot == 2) or (x == 2 and bot == 3) or (x == 3 and bot == 1):
+        print(f"O bot escolheu {ppt[bot - 1]} \nVOCÊ GANHOU!")
+    else:
+        print(f"O bot escolheu {ppt[bot - 1]} \nVOCÊ PERDEU!")
+
+    jogar_novamente = input("Quer jogar novamente? (s/n): ").lower()
+    if jogar_novamente != 's':
+        break
